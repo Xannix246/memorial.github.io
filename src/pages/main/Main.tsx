@@ -28,7 +28,7 @@ const Main = () => {
           <p className="text-md text-wrap text-shadow-lg">
             Если вы тоже были забанены в этот день, напишите issue{" "}
             <a
-              href="https://github.com/Xannix246/memorial.github.io"
+              href="https://github.com/Xannix246/memorial.github.io/issues"
               className="text-blue transition hover:underline whitespace-nowrap"
             >
               здесь

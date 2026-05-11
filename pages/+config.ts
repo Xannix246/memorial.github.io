@@ -4,12 +4,11 @@ import vikeReact from "vike-react/config";
 // Default config (can be overridden by pages)
 // https://vike.dev/config
 
-const config: Config = {
+export default {
   // https://vike.dev/head-tags
-  title: "My Vike App",
-  description: "Demo showcasing Vike",
+  title: "Мемориал",
+  description: "Мемориал павших во время расстрелов 11.05.2026-Н.В.",
+  prerender: true,
 
   extends: [vikeReact],
-};
-
-export default config;
+} satisfies Config;

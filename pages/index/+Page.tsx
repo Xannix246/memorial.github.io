@@ -1,16 +1,7 @@
-import { Counter } from "./Counter.js";
+import Main from "../../src/pages/main/Main";
 
-export default function Page() {
-  return (
-    <>
-      <h1>My Vike app</h1>
-      <p>This page is:</p>
-      <ul>
-        <li>Rendered to HTML.</li>
-        <li>
-          Interactive. <Counter />
-        </li>
-      </ul>
-    </>
-  );
-}
+const Page = () => {
+  return <Main />;
+};
+
+export default Page;

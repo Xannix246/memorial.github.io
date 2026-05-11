@@ -7,5 +7,5 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [vike(), react(), tailwindcss()],
-  base: "/memorial.github.io/"
+  // base: "/memorial.github.io/"
 });

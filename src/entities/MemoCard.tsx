@@ -15,7 +15,7 @@ const MemoCard = ({ data }: { data: BannedCard }) => {
         >
           {data.username}
         </a>
-        <h4 className="text-lg sm:text-xl">{data.description}</h4>
+        <h4 className="text-lg sm:text-xl text-center">{data.description}</h4>
       </div>
     </Container>
   );

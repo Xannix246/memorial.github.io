@@ -11,6 +11,7 @@ const Main = () => {
         "flex flex-col place-items-center w-full text-white min-h-screen relative",
         "transition duration-300",
       )}
+      id="top"
     >
       <Header />
 
@@ -45,6 +46,9 @@ const Main = () => {
             <MemoCard data={banned} key={i} />
           ))}
         </div>
+        <h4 className="text-center text-xl text-shadow-lg px-2">
+          И многие, многие другие, чьи имена не были найдены, но они навсегда останутся в истории 🕯️
+        </h4>
       </section>
 
       <section

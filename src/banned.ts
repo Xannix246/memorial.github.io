@@ -35,6 +35,12 @@ export const banned: BannedCard[] = [
     description: "Чел какой-то.",
   },
   {
+    username: "https://www.twitch.tv/m0akssim",
+    avatar: "https://static-cdn.jtvnw.net/jtv_user_pictures/57b263ee-2b40-44f1-8aac-4eebbd0fd1e3-profile_image-70x70.png",
+    url: "https://www.twitch.tv/m0akssim",
+    description: "\"ХЗВАПЗВЫПЫВПВАХЗ\" оказался поминальным 🕯️.",
+  },
+  {
     username: "abobyce",
     avatar: "https://static-cdn.jtvnw.net/user-default-pictures-uv/294c98b5-e34d-42cd-a8f0-140b72fba9b0-profile_image-70x70.png",
     url: "https://www.twitch.tv/abobyce",

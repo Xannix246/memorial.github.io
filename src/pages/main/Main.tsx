@@ -3,8 +3,29 @@ import Header from "../../widgets/Header";
 import Footer from "../../widgets/Footer";
 import { banned } from "../../banned";
 import MemoCard from "../../entities/MemoCard";
+import { useEffect, useRef, useState } from "react";
 
 const Main = () => {
+  const [visibleCount, setVisibleCount] = useState(18);
+  const loaderRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+        const target = entries[0];
+        if (target.isIntersecting) {
+          setVisibleCount((prev) =>
+            Math.min(prev + 18, banned.length)
+          );
+        }
+      },
+      { rootMargin: "100px" }
+    );
+
+    if (loaderRef.current) observer.observe(loaderRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       className={clsx(
@@ -42,10 +63,19 @@ const Main = () => {
           Павшие герои
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 p-4 gap-4 mx-auto">
-          {banned.map((banned, i) => (
+          {banned.slice(0, visibleCount).map((banned, i) => (
             <MemoCard data={banned} key={i} />
           ))}
         </div>
+        {visibleCount < banned.length && (
+          <div
+            ref={loaderRef}
+            className="flex justify-center p-8 text-sm text-zinc-300 uppercase tracking-[0.3em]"
+          >
+            scanning archives...
+          </div>
+        )}
+
         <h4 className="text-center text-xl text-shadow-lg px-2">
           И многие, многие другие, чьи имена не были найдены, но они навсегда останутся в истории 🕯️
         </h4>

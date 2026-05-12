@@ -1,9 +1,35 @@
 import clsx from "clsx";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import { useEffect, useState } from "react";
 
 const Background = () => {
-  const scrollY = useScroll().scrollY;
-  const style = useTransform(scrollY, [0, 4000], [0, -200]);
+  const { scrollY } = useScroll();
+  const [pageHeight, setPageHeight] = useState(0);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const updateHeight = () => setPageHeight(document.documentElement.scrollHeight);
+    const observer = new ResizeObserver(() => updateHeight());
+
+    updateHeight();
+    setWidth(window.innerWidth);
+    observer.observe(document.body);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const y = useTransform(
+    scrollY,
+    [0, pageHeight],
+    [0, -pageHeight * (width < 640 ? 0.01 : 0.032)]
+  );
+  const style = useSpring(y, {
+    stiffness: 40,
+    damping: 20,
+    mass: 0.8,
+  });
 
   return (
     <motion.div

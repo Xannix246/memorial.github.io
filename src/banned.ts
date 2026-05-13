@@ -616,4 +616,10 @@ export const banned: BannedCard[] = [
     url: "https://www.twitch.tv/k1shk1t",
     description: "Последний котик павшего чата.",
   },
+  {
+    username: "MaxGromMD",
+    avatar: "https://static-cdn.jtvnw.net/user-default-pictures-uv/dbdc9198-def8-11e9-8681-784f43822e80-profile_image-70x70.png",
+    url: "https://www.twitch.tv/maxgrommd",
+    description: "Он пытался быть быстрым, но диктатор был быстрее.",
+  },
 ];

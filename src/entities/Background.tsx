@@ -44,7 +44,7 @@ const Background = () => {
         <img src="assets/bg.png" className="absolute min-w-200 md:min-w-384 object-cover top-55 md:-top-55"/>
       </div>
 
-      <div className="absolute w-full h-[60vh] bg-linear-0 from-[#832204] to-80% -bottom-55" />
+      <div className="absolute w-full h-[65vh] bg-linear-0 from-[#832204] to-80% -bottom-65" />
     </motion.div>
   );
 };
